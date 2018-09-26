@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a href="#" class="navbar-brand">Recipes book</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#data">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="data">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a href="#" class="nav-link"(click)="onSelect('recipe')">Recipes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link" (click)="onSelect('shopping-list')">Shoppping List</a></li>
+    </ul> 
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+              Manage
+            </a>
+            <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+              <a href="" class="dropdown-item">Save Data</a>
+              <a href="" class="dropdown-item">Fetch Data</a>
+            </div>
+          </li>
+    </ul>
+  </div>
+  
+</nav>
