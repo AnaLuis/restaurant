@@ -1,12 +1,12 @@
-<app-header (featureSelected)='onNavigate($event)' ></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-recipes *ngIf="loadedFeature==='recipe'"></app-recipes>
-      <app-shoping-list *ngIf="loadedFeature !=='recipe'"></app-shoping-list>
-      
+<app-header (feactureSelected)="onNavigate($event)"></app-header>
+<br>
+<div class="container h-100">
+  <div class="row  h-100 justify-content-center align-items-center">
+    <div class="col-md-10">
+      <!--<app-recipes *ngIf="loadFeature == 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadFeature !== 'recipe'"></app-shopping-list>
+      -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-

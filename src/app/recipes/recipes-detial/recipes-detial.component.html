@@ -1,0 +1,36 @@
+
+<div class="card text-white bg-primary mb-3" style="width: 18rem;">
+  <img class="card-img-top" [src]="recipe.imagePath" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{recipe.name}}</h5>
+    <h6 class="card-text">{{recipe.description}}</h6>
+    <div class="btn-group">
+      <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+        Manage Recipe
+      </button>
+      <div class="dropdown-menu">
+        <a style="cursor:pointer" class="dropdown-item" (click)="onAddToShoppingList()">To shopping List</a>
+        <a style="cursor:pointer" class="dropdown-item">Edit Recipes</a>
+        <a style="cursor:pointer" class="dropdown-item">Delete Recipe</a>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+  <table class="table table-sm table-dark table-hover" style="border:dotted 1px" *ngFor="let ing of recipe.ingredients">
+    <tr>
+      <td>{{ing.name}}</td>
+      <td>({{ing.amount}})</td>
+    </tr>
+  </table>
+  </div>
+</div>
+<!-- 
+<div class="col-12">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+{{ingredient.name}}({{ingredient.amount}})
+    </li>
+  </ul>
+</div>
+-->
+

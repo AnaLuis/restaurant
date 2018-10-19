@@ -4,27 +4,31 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
-import { ShopingListComponent } from './shoping-list/shoping-list.component';
-import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { RecipesDetialComponent } from './recipes/recipes-detial/recipes-detial.component';
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
-import { ShopingEditComponent } from './shoping-list/shoping-edit/shoping-edit.component';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { IngredientsService } from './services/Ingredients.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RecipesComponent,
-    ShopingListComponent,
-    RecipesDetailComponent,
+    ShoppingListComponent,
+    RecipesDetialComponent,
     RecipesListComponent,
     RecipesItemComponent,
-    ShopingEditComponent
+    ShoppingEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,AppRoutingModule
   ],
-  providers: [],
+  providers: [//Uso de servicios por padre
+    IngredientsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
