@@ -1,5 +1,5 @@
 
-<div class="card text-white bg-primary mb-3" style="width: 18rem;">
+<div class="card text-black bg-warning mb-3" style="width: 18rem;">
   <img class="card-img-top" [src]="recipe.imagePath" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{recipe.name}}</h5>
@@ -10,14 +10,14 @@
       </button>
       <div class="dropdown-menu">
         <a style="cursor:pointer" class="dropdown-item" (click)="onAddToShoppingList()">To shopping List</a>
-        <a style="cursor:pointer" class="dropdown-item">Edit Recipes</a>
+        <a style="cursor:pointer" class="dropdown-item" (click)="onEditRecipe()">Edit Recipes</a>
         <a style="cursor:pointer" class="dropdown-item">Delete Recipe</a>
       </div>
     </div>
   </div>
   <div class="card-body">
-  <table class="table table-sm table-dark table-hover" style="border:dotted 1px" *ngFor="let ing of recipe.ingredients">
-    <tr>
+  <table class="table table-sm table-ligth table-hover" style="border:dotted 1px" *ngFor="let ing of recipe.ingredients">
+    <tr class="">
       <td>{{ing.name}}</td>
       <td>({{ing.amount}})</td>
     </tr>

@@ -16,11 +16,11 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit() {
    //Suscribirse una vez k ay un ecento se actualiza
-   this.recipeService.recipeSelected.subscribe(
+   /*this.recipeService.recipeSelected.subscribe(
       (recipe:Recipe)=>{
         this.recipeSelected = recipe;
       }
-   );
+   );*/
     //Antes del constructor
   }
 

@@ -1,14 +1,16 @@
 <div class="row">
   <div class="col-md-12">
-    <button class="btn btn-success">
+    <button class="btn btn-success" (click)="onNewRecipe()">
       New Recipe
     </button>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <app-recipes-item *ngFor="let recipeEle of recipes"
-    [recipe]="recipeEle" >
+    <!-- Index hace alucion a la receta, despues se extrae el valor y se pasa a una variable 
+    llamada index linea 13 -->
+    <app-recipes-item *ngFor="let recipeEle of recipes; let i = index" 
+    [recipe]="recipeEle"  [index]=i>
 
     </app-recipes-item>
   </div>

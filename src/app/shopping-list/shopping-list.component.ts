@@ -19,5 +19,10 @@ export class ShoppingListComponent implements OnInit {
   )
     this.ingredients =this.IngredientsService.getIngredientes();//le regresa el arreglo
   }
+  onEditItem(index:number){
+    console.log("dsfsd");
+    
+    this.IngredientsService.startedEditing.next(index);
+  }
 
 }

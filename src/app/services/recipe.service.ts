@@ -5,7 +5,7 @@ import { IngredientsService } from "./Ingredients.service";
 
 @Injectable()//para inyectar un servicio dentro de otro
 export class RecipeService{
-    recipeSelected = new EventEmitter<Recipe>();
+    //recipeSelected = new EventEmitter<Recipe>();
     private recipes: Recipe[]=[
         new Recipe('Pizza','Pizza hawaiana',
         'https://images.firstwefeast.com/complex/images/fl_lossy,q_auto/v1/xh7g5sgtximbqev3plah/pizza-hut-vs-dominos',
@@ -20,6 +20,10 @@ export class RecipeService{
       }
       getRecipes(){
           return this.recipes.slice();
+      }
+      //devuleve la receta que esta en dado posicion 
+      getRecipe(index:number){
+          return this.recipes[index];
       }
       //metodo para invocar desde la vista,recibe un arreglo de ingrediente y se lo pasa al metodo add
       addIngredientsToShoppingList(ingredients: Ingredient []){
