@@ -20,6 +20,11 @@ export class IngredientsService{
         
 
     }
+    deletIngredient(index:number){
+        this.ingredients.splice(index,1);
+
+    }
+    
     addIngredient(nIngredient: Ingredient){
         this.ingredients.push(nIngredient);
         console.log(this.ingredients);

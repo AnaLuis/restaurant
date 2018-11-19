@@ -17,8 +17,8 @@
           <div class="col-12">
             <button class="btn btn-success" type="submit" [disabled]="!f.valid">
               {{ editMode ? 'update':'Add'}}</button>
-            <button class="btn btn-danger" type="button">Delete Item</button>
-            <button class="btn btn-primary" type="button">Clear</button>
+            <button class="btn btn-danger" type="button" [disabled]= "!editMode" (click)="Delete()">Delete Item</button>
+            <button class="btn btn-primary" type="button" (click)="Clear()">Clear</button>
           </div>
         </div>
       </div>

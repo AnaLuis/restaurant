@@ -1,5 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import {Recipe} from '../recipes.model'; 
+import { Recipe } from "../recipes.model";
 import { RecipeService } from '../../services/recipe.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -17,6 +17,9 @@ export class RecipesListComponent implements OnInit {
  
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
+    this.recipeService.UpdateRecipes.subscribe((Recipe)=>{
+      this.recipes = this.recipeService.getRecipes();
+    })
   }
   onNewRecipe(){
     this.router.navigate(['new' ],{relativeTo:this.route});

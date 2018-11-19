@@ -55,6 +55,17 @@ this.subscrip.unsubscribe();
     
     //this.clearInputs();
   }
+  Delete(){
+    this.ingredientService.deletIngredient(this.indexEditedItem);
+    this.ingredientService.actlist.next();
+    this.slForm.resetForm();
+    this.Clear();
+  }
+  Clear(){
+    this.slForm.resetForm();
+    this.editMode=false;
+
+  }
 
  /* clearInputs(){
     this.nameInputRef.nativeElement.value = "";

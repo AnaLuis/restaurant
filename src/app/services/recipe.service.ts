@@ -2,10 +2,11 @@ import { Recipe } from "../recipes/recipes.model";
 import { EventEmitter, Inject, Injectable } from "@angular/core";
 import { Ingredient } from "../shared/ingredients.model";
 import { IngredientsService } from "./Ingredients.service";
+import { Subject } from "rxjs";
 
 @Injectable()//para inyectar un servicio dentro de otro
 export class RecipeService{
-    //recipeSelected = new EventEmitter<Recipe>();
+    UpdateRecipes = new Subject<Recipe>();
     private recipes: Recipe[]=[
         new Recipe('Pizza','Pizza hawaiana',
         'https://images.firstwefeast.com/complex/images/fl_lossy,q_auto/v1/xh7g5sgtximbqev3plah/pizza-hut-vs-dominos',
@@ -16,8 +17,8 @@ export class RecipeService{
       ];
       //crear constructor
       constructor(private ingredientsService: IngredientsService){
-
       }
+
       getRecipes(){
           return this.recipes.slice();
       }
@@ -28,6 +29,13 @@ export class RecipeService{
       //metodo para invocar desde la vista,recibe un arreglo de ingrediente y se lo pasa al metodo add
       addIngredientsToShoppingList(ingredients: Ingredient []){
           this.ingredientsService.addIngredients(ingredients);
+      }
+      addRecipe(recipe:Recipe){
+          this.recipes.push(recipe);
+          this.UpdateRecipes.next(recipe);
+      }
+      updateRecipe(index:number,recipe:Recipe){
+          this.recipes[index]=recipe;
       }
 
 }
