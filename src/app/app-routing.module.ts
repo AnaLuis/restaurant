@@ -4,7 +4,6 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { NgModule } from '@angular/core';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipesDetialComponent } from './recipes/recipes-detial/recipes-detial.component';
-import { NewComponent } from './recipes/new/new.component';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
 const routes: Routes=[
 {//el full es obligatoria cuando tenga una url predeterminada

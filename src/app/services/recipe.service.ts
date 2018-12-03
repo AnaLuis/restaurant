@@ -37,5 +37,10 @@ export class RecipeService{
       updateRecipe(index:number,recipe:Recipe){
           this.recipes[index]=recipe;
       }
+      onDelete(index:number){
+       this.recipes.splice(index,1);
+       var reta=new Recipe('','','',[]);
+       this.UpdateRecipes.next(reta);
+      }
 
 }

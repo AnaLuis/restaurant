@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { NewComponent } from './recipes/new/new.component';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import { RecipeService } from './services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.compon
     BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule
   ],
   providers: [//Uso de servicios por padre
-    IngredientsService
+    IngredientsService,RecipeService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,6 +12,7 @@ export class RecipesDetialComponent implements OnInit {
  //@Input() recipe:Recipe;
  id:number;
  recipe:Recipe;
+ Subscription;
   constructor(private recipeService: RecipeService,private route:ActivatedRoute,
     private router:Router ) {
    }
@@ -31,5 +32,10 @@ export class RecipesDetialComponent implements OnInit {
     this.router.navigate(['edit'],{ relativeTo: this.route});
 
   }
+  onDelete(id:number){
+    this.recipeService.onDelete(id);
+    this.router.navigate(['../'],{relativeTo:this.route});
+  }
+  
 
 }
