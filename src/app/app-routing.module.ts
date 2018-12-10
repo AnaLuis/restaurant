@@ -5,21 +5,26 @@ import { NgModule } from '@angular/core';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipesDetialComponent } from './recipes/recipes-detial/recipes-detial.component';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import { AuthGuard } from './guards/auth.guard';
+import { SigninComponent } from './auth/signin/signin.component';
 const routes: Routes=[
 {//el full es obligatoria cuando tenga una url predeterminada
     path:'',redirectTo: '/recipes',pathMatch:'full'
 },
+{path: 'login', component:SigninComponent},
 {
-    path:'recipes',component: RecipesComponent, children:[
+    path:'recipes',component: RecipesComponent, canActivate:[AuthGuard],children:[
         {path:'',component: RecipesStartComponent},
         {path: 'new',component: RecipesEditComponent},
         {path: ':id',component:RecipesDetialComponent},
         {path:':id/edit',component:RecipesEditComponent}
         
     ]
+    
 },
+
 {
-    path: 'shoppinglist',component:ShoppingListComponent
+    path: 'shoppinglist',canActivate:[AuthGuard],component:ShoppingListComponent
 }
 
 ];
